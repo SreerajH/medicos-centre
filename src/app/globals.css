@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: #f8fafa;
+  color: #1c2b2a;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: #2ca89e;
+  color: #ffffff;
+}
+
+:where(a, button, [tabindex], input, select, textarea):focus-visible {
+  outline: 2px solid #2ca89e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(13, 79, 74, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 79, 74, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
