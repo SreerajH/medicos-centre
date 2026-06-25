@@ -19,12 +19,12 @@ export default function Packages() {
             <Reveal key={p.name} delay={i * 0.06}>
               <article
                 className={`relative h-full rounded-2xl bg-white border p-6 transition-all hover:-translate-y-0.5 hover:shadow-card flex flex-col ${
-                  p.featured
+                  "featured" in p && p.featured
                     ? "border-amber/50 shadow-card"
                     : "border-line hover:border-teal-500"
                 }`}
               >
-                {p.featured && (
+                {"featured" in p && p.featured && (
                   <span className="absolute -top-2.5 left-6 px-2.5 py-0.5 rounded-full bg-amber text-white text-[0.65rem] font-bold uppercase tracking-[0.12em]">
                     Most popular
                   </span>
@@ -47,7 +47,7 @@ export default function Packages() {
                 <a
                   href="#book"
                   className={`mt-5 inline-flex items-center justify-center w-full h-11 rounded-full text-[0.88rem] font-semibold transition-colors ${
-                    p.featured
+                    "featured" in p && p.featured
                       ? "bg-amber text-white hover:bg-amber-hover"
                       : "border border-teal-700/40 text-teal-900 hover:bg-teal-100"
                   }`}
